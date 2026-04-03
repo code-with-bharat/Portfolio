@@ -870,6 +870,20 @@
       display: none;
     }
 
+    .project-card::before,
+    .project-card::after {
+      pointer-events: none;
+    }
+
+    .project-links {
+      position: relative;
+      z-index: 20;
+    }
+
+    .project-link {
+      cursor: pointer;
+    }
+
     /* ==============================
        EDUCATION / TIMELINE
     ============================== */
