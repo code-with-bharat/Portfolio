@@ -161,13 +161,23 @@
     }
 
     .nav-logo {
-      font-family: var(--font-display);
+      font-family: 'DM Mono', monospace;
       font-size: 1.4rem;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
+      color: #00ff9f;
+      text-shadow: 0 0 8px rgba(0, 255, 159, 0.7);
+      letter-spacing: 1px;
+    }
+
+    .nav-logo::after {
+      content: "_";
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
     }
 
     .nav-links {
@@ -1253,7 +1263,7 @@
 
   <!-- NAVBAR -->
   <nav id="navbar">
-    <div class="nav-logo">Bharat</div>
+    <div class="nav-logo" id="cyber-name"></div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -2001,6 +2011,19 @@
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
     });
+
+    const text = "root@bharat";
+    let i = 0;
+
+    function typeCyber() {
+      if (i < text.length) {
+        document.getElementById("cyber-name").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeCyber, 100);
+      }
+    }
+
+    typeCyber();
 
     /* ==============================
        HAMBURGER MENU
