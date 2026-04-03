@@ -773,6 +773,7 @@
       overflow: hidden;
       transition: border-color 0.3s, transform 0.3s;
       cursor: default;
+      z-index: 1;
     }
 
     .project-card::before {
@@ -798,6 +799,8 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 20px;
+      position: relative;
+      z-index: 1000;
     }
 
     .project-icon {
@@ -829,6 +832,8 @@
       color: var(--text-muted);
       font-size: 0.8rem;
       transition: all 0.2s;
+      position: relative;
+      z-index: 1000;
     }
 
     .project-link:hover {
